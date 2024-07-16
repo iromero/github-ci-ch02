@@ -1,0 +1,33 @@
+name: first-challenge
+
+on: push
+
+jobs:
+  job1: 
+    name: ubuntu-job
+    runs-on: ubuntu-lastest
+    steps:
+      - uses: actions/checkout@v1
+      - run: date
+
+  job2: 
+    name: windows-job
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: Get-Date
+
+  job3: 
+    name: mac-job
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: date
+
+  job4: 
+    name: ubuntu2-job
+    runs-on: ubuntu-latest
+    depends-on: [job1, job2, job3]
+    steps:
+      - uses: actions/checkout@v1
+      - run: date
