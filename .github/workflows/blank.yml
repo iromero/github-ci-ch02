@@ -3,11 +3,6 @@ name: first-challenge
 on: push
 
 jobs:
-  ubuntu-job: 
-    runs-on: macos-lastest
-    steps:
-      - run: date
-
   windows-job: 
     runs-on: windows-latest
     steps:
@@ -20,6 +15,6 @@ jobs:
 
   ubuntu2-job: 
     runs-on: macos-latest
-    needs: [windows-job, ubuntu-job, mac-job]
+    needs: [windows-job, mac-job]
     steps:
       - run: date
