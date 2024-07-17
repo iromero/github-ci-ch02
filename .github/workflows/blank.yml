@@ -20,6 +20,6 @@ jobs:
 
   ubuntu2-job: 
     runs-on: ubuntu-latest
-    depends-on: [windows-job, ubuntu-job, mac-job]
+    needs: [windows-job, ubuntu-job, mac-job]
     steps:
       - run: date
